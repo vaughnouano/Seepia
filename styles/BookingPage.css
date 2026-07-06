@@ -26,6 +26,10 @@
     visibility 0.3s ease;
 }
 
+a {
+  all: unset;
+}
+
 /* was .book-menu.show */
 .book-menu[open] {
   opacity: 1;
@@ -94,8 +98,13 @@
 Iframe 
 ================= */
 .book-menu .calendar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 10px;
 }
 .book-menu .calendar-view {
   height: 100%;
+  width: 100%;
 }
