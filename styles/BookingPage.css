@@ -53,6 +53,10 @@ a {
   overflow: hidden;
 }
 
+.book-menu .logo-container {
+  display: none;
+}
+
 .camera-detail-panel {
   display: flex;
   width: 100%;
