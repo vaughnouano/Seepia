@@ -1,0 +1,21 @@
+body {
+  height: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+main {
+  width: 992px;
+  margin-top: 200px;
+
+  overflow: visible;
+
+  /* border: 1px solid black; */
+}
+
+img {
+  width: 100%;
+  height: auto;
+  object-fit: scale-down;
+}

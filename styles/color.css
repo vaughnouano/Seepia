@@ -1,0 +1,118 @@
+:root {
+  /* ================ 
+        Color    
+    ================ */
+  --color-primary: #331e1b;
+  --color-primary-light: #4c2e2a;
+
+  --color-secondary: #ffffff;
+  --color-secondary-dark: #fdfdfd;
+
+  /* Linears */
+  --color-primary-linear-top: #221210;
+  --color-primary-linear-bottom: #4e302b;
+
+  --color-secondary-linear-top: var(--color-secondary);
+  --color-secondary-linear-bottom: #f2eceb;
+
+  /* background */
+  --color-bg: #ebe7e6;
+}
+
+body {
+  background-color: var(--color-bg);
+}
+
+h1 {
+  color: var(--color-primary-light);
+}
+p {
+  color: var(--color-primary-light);
+}
+
+.elevate-card {
+  background-color: var(--color-secondary);
+}
+.camera-card {
+  background-color: var(--color-secondary-dark);
+  box-shadow: 1px 3px 7.5px hsla(0, 0%, 0%, 0.1);
+}
+.book-menu-card {
+  box-shadow: 3px 6px 9px hsla(0, 0%, 0%, 0.1);
+}
+.image-container {
+  background-color: var(--color-secondary-dark);
+}
+
+.info-container {
+  background: #ffffff;
+  background: -webkit-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(242, 236, 235, 0.6) 100%
+  );
+  background: -moz-linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(242, 236, 235, 0.6) 100%
+  );
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(242, 236, 235, 0.6) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(
+  startColorstr="#FFFFFF",
+  endColorstr="#F2ECEB",
+  GradientType=0
+);
+  /* From https://css.glass */
+  /* background: rgba(255, 255, 255, 0.55); */
+  border-radius: 15px;
+  box-shadow: inset 0px -10px 30px rgba(0, 0, 0, 0.015);
+  backdrop-filter: blur(14.9px);
+  -webkit-backdrop-filter: blur(14.9px);
+}
+
+.book-appointment_btn {
+  color: var(--color-secondary);
+  border: 4px solid transparent;
+  border-radius: 8px;
+
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.25);
+
+  background:
+    linear-gradient(var(--color-primary), var(--color-primary)) padding-box,
+    linear-gradient(
+        to top,
+        var(--color-primary-linear-bottom),
+        var(--color-primary-linear-top)
+      )
+      border-box;
+
+  transition: 120ms ease-in-out;
+}
+
+/* ================
+DIALOG
+================ */
+.book-menu {
+  background-color: var(--color-bg);
+}
+
+/* HOVER AND CLICK STATES */
+.book-appointment_btn:hover {
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.5);
+
+  background:
+    linear-gradient(var(--color-primary), var(--color-primary)) padding-box,
+    linear-gradient(
+        to top,
+        var(--color-primary-linear-top),
+        var(--color-primary-linear-bottom)
+      )
+      border-box;
+
+  transform: translateY(-10%);
+  transition: 120ms ease-in-out;
+}

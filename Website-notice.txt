@@ -1,0 +1,3 @@
+This current website is made using vanilla HTML, JS and CSS.
+
+Seepia will be rebuilt on top of React, for project scalability and security

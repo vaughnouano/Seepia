@@ -1,0 +1,72 @@
+/* ===================
+   Hover
+   ===================
+*/
+.product-image {
+  transition: 120ms ease-in-out;
+}
+
+.product-image:hover {
+  transform: scale(1.05);
+  transition: 250ms ease-in-out;
+}
+
+/* BookingPage */
+.book-menu .navigation-panel button:hover {
+  transform: scale(1.15);
+  transition: 160ms ease-in-out;
+}
+
+/* ===================
+   Scale In Right
+   ===================
+*/
+.feature .image-container {
+  animation: myAnim 1s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+  0% {
+    opacity: 0.8;
+    transform: translateX(150px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* becomes scale in bottom */
+@media (max-width: 430px) {
+  @keyframes myAnim {
+    0% {
+      opacity: 0.8;
+      transform: translateY(100px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* ===================
+   Scale In Bottom
+   ===================
+*/
+.camera--grid .image-container {
+  animation: cameraGrid 1s ease 0s 1 normal forwards;
+}
+@keyframes cameraGrid {
+  0% {
+    opacity: 0.8;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

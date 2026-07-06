@@ -1,0 +1,96 @@
+.book-menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: fixed;
+  inset: 0;
+
+  width: 100vw;
+  height: 100vh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+
+  border: none;
+  padding: 0;
+  z-index: 9999;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity 0.3s ease;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.book-menu.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.book-menu .elevate-card {
+  display: flex;
+  width: 1160px;
+  padding: 16px;
+}
+.book-menu-card {
+  display: flex;
+  width: 100%;
+  border-radius: calc(27px - 16px);
+  overflow: hidden;
+}
+
+.camera-detail-panel {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+}
+.book-menu .navigation-panel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.book-menu .navigation-panel button {
+  all: unset;
+  cursor: pointer;
+}
+
+.book-menu .image-container {
+  height: 280px;
+
+  border-radius: 0;
+
+  background-color: #f6f6f6;
+  display: flex;
+  align-items: center;
+}
+.book-menu .product-image {
+  width: 100%;
+}
+
+.book-menu .info-container {
+  height: 100%;
+  border-radius: 0;
+  /* background-color: orange; */
+  padding-inline: 32px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+.book-menu .book-appointment_btn img {
+  width: auto;
+}
+
+/* ================ 
+Iframe 
+================= */
+.book-menu .calendar-container {
+  padding: 10px;
+}
+.book-menu .calendar-view {
+  height: 100%;
+}

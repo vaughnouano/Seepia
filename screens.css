@@ -1,0 +1,274 @@
+/* ==========================================================================
+   RESPONSIVE — Tablet (≤1024px)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  main {
+    transform: scale(0.65);
+    transform-origin: top;
+    width: calc(100% / 0.65);
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE — Tablet (≤834px)
+   ========================================================================== */
+@media (max-width: 834px) {
+  main {
+    transform: scale(0.65);
+    transform-origin: top;
+    width: calc(100% / 0.65);
+  }
+
+  .feature .product-image {
+    transform: scale(0.65);
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE — Mobile (≤430px)
+   ========================================================================== */
+@media (max-width: 430px) {
+  /* ==========
+     Block
+     ========== */
+  main {
+    transform: scale(0.9);
+    transform-origin: top;
+    width: calc(100% / 0.9);
+  }
+
+  .elevate-card {
+    padding: 15px;
+  }
+
+  .book-appointment_btn {
+    width: 100%;
+  }
+
+  .book-appointment_btn img {
+    height: 100%;
+  }
+
+  main .title {
+    padding: 0;
+    margin-bottom: 12px;
+  }
+
+  main .description {
+    padding-inline: 6px;
+  }
+
+  /* ==========
+     Element — Feature
+     ========== */
+  .feature {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .feature .elevate-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    border-radius: 27px;
+  }
+
+  .feature .camera-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 334px;
+    border-radius: calc(27px - 10px);
+  }
+
+  .feature .title {
+    margin: 0;
+  }
+
+  .feature .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+
+  .feature .product-image {
+    /* position: unset; */
+    display: block;
+    right: 0;
+    bottom: -55px;
+    width: 100%;
+    height: auto;
+    transform: scale(0.55);
+    object-fit: none;
+    overflow: visible;
+  }
+
+  .feature .info-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    gap: 24px;
+  }
+
+  .feature .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    height: 100%;
+    min-width: 256px;
+    gap: 10px;
+  }
+
+  /* ==========
+     Element — DJI Osmo Pocket 4
+     ========== */
+  .dji-osmo-pocket-4-card {
+    width: 100%;
+    height: 432px;
+    overflow: visible;
+  }
+
+  .dji-osmo-pocket-4-card .image-container {
+    height: 100%;
+  }
+
+  .dji-osmo-pocket-4-card .product-image {
+    position: absolute;
+    bottom: -70px;
+    transform: scale(1);
+    object-fit: none;
+  }
+
+  .dji-osmo-pocket-4-card .info-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap: 24px;
+    padding: 15px;
+  }
+
+  .dji-osmo-pocket-4-card .text-container {
+    max-width: none;
+  }
+
+  /* ==========
+     Element — Kodak FZ55 PIXPRO
+     ========== */
+  .kodak-fz55-card {
+    width: 100%;
+    height: 350px;
+    margin-top: 130px;
+    overflow: visible;
+  }
+
+  .kodak-fz55-card .camera-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .kodak-fz55-card .image-container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+    overflow: visible;
+  }
+
+  .kodak-fz55-card .product-image {
+    position: absolute;
+    bottom: -50px;
+    transform: scale(0.7);
+    object-fit: none;
+  }
+
+  .kodak-fz55-card .info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 15px;
+  }
+
+  .kodak-fz55-card .logo-container img {
+    width: auto;
+    height: 55px;
+  }
+
+  .kodak-fz55-card .text-container {
+    max-width: 411px;
+  }
+
+  .kodak-fz55-card .title {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+
+  /* ==========
+     Element — Dialog (Book Menu)
+     ========== */
+  .book-menu {
+    height: 100vh;
+    height: 100dvh; /* dynamic viewport height, avoids iOS Safari address-bar clipping */
+    padding-inline: 0;
+    margin: 0;
+    border-radius: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    touch-action: pan-y;
+  }
+
+  .book-menu .elevate-card {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+    min-height: 0; /* lets flex children scroll instead of being clipped */
+  }
+
+  .book-menu-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border-radius: calc(27px - 16px);
+    overflow-y: auto; /* was overflow: hidden — this was likely the main blocker */
+    -webkit-overflow-scrolling: touch;
+    min-height: 0;
+  }
+
+  .book-menu .image-container {
+    height: 220px;
+  }
+
+  /* Iframe */
+  .book-menu .calendar-container {
+    padding: 10px;
+    width: 100%;
+    padding-bottom: 10px;
+  }
+
+  .book-menu .calendar-view {
+    width: 100%;
+    height: 400px;
+    border-radius: 32px;
+  }
+
+  /* ==========
+     Modifier
+     ========== */
+  .camera--grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+    margin-bottom: 0px;
+  }
+}

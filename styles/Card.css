@@ -1,0 +1,210 @@
+/* ================
+Block
+================ */
+.book-appointment_btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  gap: 16px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-inline: 48px;
+
+  cursor: pointer;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: flex-start;
+
+  height: auto;
+}
+.logo-container img {
+  height: auto;
+  width: 100px;
+}
+.camera-card {
+  border-radius: 27px;
+}
+.image-container {
+  border-radius: calc(27px - 10px);
+}
+
+/* decor */
+.elevate-card {
+  padding: 10px;
+  border-radius: 27px;
+}
+
+/* ================
+Element
+================ */
+/* Feature */
+.feature {
+  display: flex;
+
+  justify-content: flex-end;
+}
+.feature .elevate-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 923px;
+  height: 385px;
+  padding: 10px;
+
+  border-radius: 27px;
+}
+.feature .camera-card {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  border-radius: calc(27px - 10px);
+}
+.feature .image-container {
+  position: relative;
+  display: flex;
+
+  height: 100%;
+  width: 100%;
+}
+.feature .product-image {
+  position: absolute;
+  right: 78px;
+
+  width: 755px;
+  height: auto;
+
+  object-fit: none;
+  overflow: visible;
+}
+.feature .info-container {
+  display: flex;
+  flex-direction: column;
+  width: 352px;
+  max-height: 390px;
+  padding-inline: 32px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  gap: 10px;
+}
+.feature .text-container {
+  display: flex;
+  justify-content: start;
+  flex-direction: column;
+
+  height: 100%;
+  min-width: 256px;
+
+  gap: 10px;
+}
+
+/* DJI OSMO POCKET 4 */
+.dji-osmo-pocket-4-card {
+  /* background-color: red; */
+
+  height: 513px;
+  overflow: visible;
+}
+.dji-osmo-pocket-4-card .camera-card {
+  /* background-color: GREEN; */
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.dji-osmo-pocket-4-card .image-container {
+  position: relative;
+  height: 100%;
+  overflow: visible;
+}
+.dji-osmo-pocket-4-card .product-image {
+  position: absolute;
+  object-fit: none;
+  width: 360px;
+  bottom: -55px;
+}
+.dji-osmo-pocket-4-card .info-container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  padding-inline: 32px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+.dji-osmo-pocket-4-card .text-container {
+  max-width: 310px;
+}
+.dji-osmo-pocket-4-card .title {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+/* KODAK FZ55 PIXPRO */
+.kodak-fz55-card {
+  height: 436px;
+  overflow: visible;
+}
+.kodak-fz55-card .camera-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.kodak-fz55-card .image-container {
+  position: relative;
+  height: 100%;
+  overflow: visible;
+
+  display: flex;
+  justify-content: center;
+}
+.kodak-fz55-card .product-image {
+  position: absolute;
+  object-fit: none;
+  width: 445px;
+  overflow: visible;
+  bottom: -50px;
+}
+.kodak-fz55-card .info-container {
+  display: flex;
+  flex-direction: column;
+
+  gap: 16px;
+
+  padding-inline: 64px;
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.kodak-fz55-card .logo-container img {
+  height: 55px;
+  width: auto;
+}
+
+.kodak-fz55-card .text-container {
+  max-width: 411px;
+}
+.kodak-fz55-card .title {
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+/* ================
+Modifier
+================ */
+/* camera--grid */
+.camera--grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+
+  align-items: self-end;
+  gap: 32px;
+
+  height: auto;
+  margin-top: 100px;
+  margin-bottom: 250px;
+}

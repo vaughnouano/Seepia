@@ -1,0 +1,62 @@
+:root {
+  /* ================ 
+        Typography    
+    ================ */
+  --font-family: "Poppins", sans-serif;
+
+  --fw-extraLight: 200;
+  --fw-light: 400;
+  --fw-semiBold: 600;
+  --fw-bold: 700;
+
+  --fs-s: 1rem;
+  --fs-m: 1.25rem;
+  --fs-lg: 1.5rem;
+  --fs-xlg: 2.25rem;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --fs-s: 0.813rem;
+    --fs-m: 1rem;
+    --fs-xlg: 1.5rem;
+  }
+}
+@media (max-width: 430px) {
+  :root {
+    --fs-s: 1rem;
+    --fs-m: 1.25rem;
+    --fs-xlg: 2rem;
+  }
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 16px;
+}
+
+h1 {
+  font-size: var(--fs-xlg);
+  font-weight: var(--fw-semiBold);
+  letter-spacing: -0.125rem;
+  line-height: var(--fs-xlg);
+}
+p {
+  font-size: var(--fs-s);
+  font-weight: var(--fw-extraLight);
+  line-height: var(--fs-s);
+  letter-spacing: 2%;
+  text-wrap: pretty;
+}
+
+.book-menu .title {
+  font-weight: var(--fw-light);
+  font-size: var(--fs-lg);
+  letter-spacing: -5%;
+}
+
+.book-appointment_btn {
+  font-size: var(--fs-m);
+  font-weight: var(--fw-bold);
+  letter-spacing: calc(var(--fs-m) - 1.2rem);
+}
