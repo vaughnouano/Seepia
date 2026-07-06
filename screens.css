@@ -27,7 +27,7 @@
 /* ==========================================================================
    RESPONSIVE — Mobile (≤430px)
    ========================================================================== */
-@media (max-width: 430px) {
+@media (max-width: 520px) {
   /* ==========
      Block
      ========== */
@@ -96,14 +96,13 @@
   }
 
   .feature .product-image {
-    /* position: unset; */
-    display: block;
-    right: 0;
-    bottom: -55px;
-    width: 100%;
-    height: auto;
-    transform: scale(0.55);
-    object-fit: none;
+    position: absolute;
+    right: 0px;
+
+    width: 391px;
+    height: 260px;
+
+    /* object-fit: none; */
     overflow: visible;
   }
 

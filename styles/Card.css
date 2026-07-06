@@ -68,6 +68,8 @@ Element
 .feature .image-container {
   position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
 
   height: 100%;
   width: 100%;
@@ -76,8 +78,8 @@ Element
   position: absolute;
   right: 78px;
 
-  width: 755px;
-  height: auto;
+  width: 512px;
+  height: px;
 
   object-fit: none;
   overflow: visible;
@@ -125,7 +127,9 @@ Element
   position: absolute;
   object-fit: none;
   width: 360px;
+
   bottom: 25px;
+  overflow: visible;
 }
 .dji-osmo-pocket-4-card .info-container {
   display: flex;
