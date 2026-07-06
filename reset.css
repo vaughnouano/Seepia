@@ -1,3 +1,9 @@
+/* Add to the top of screens.css or reset.css */
+html,
+body {
+  overflow-x: hidden;
+}
+
 /* Box sizing rules */
 *,
 *::before,
