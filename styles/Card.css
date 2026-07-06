@@ -125,7 +125,7 @@ Element
   position: absolute;
   object-fit: none;
   width: 360px;
-  bottom: -55px;
+  bottom: 25px;
 }
 .dji-osmo-pocket-4-card .info-container {
   display: flex;
@@ -168,7 +168,7 @@ Element
   object-fit: none;
   width: 445px;
   overflow: visible;
-  bottom: -50px;
+  bottom: 40px;
 }
 .kodak-fz55-card .info-container {
   display: flex;

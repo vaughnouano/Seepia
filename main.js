@@ -3,6 +3,14 @@ const buttons = document.getElementsByClassName("book-appointment_btn");
 
 for (const button of buttons) {
   button.addEventListener("click", () => {
-    bookMenu.classList.add("show");
+    if (typeof bookMenu.showModal === "function") {
+      bookMenu.showModal();
+    } else {
+      bookMenu.classList.add("show");
+    }
   });
 }
+
+bookMenu.addEventListener("click", (e) => {
+  if (e.target === bookMenu) bookMenu.close();
+});

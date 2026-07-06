@@ -26,10 +26,15 @@
     visibility 0.3s ease;
 }
 
-.book-menu.show {
+/* was .book-menu.show */
+.book-menu[open] {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+}
+
+.book-menu::backdrop {
+  background: transparent;
 }
 
 .book-menu .elevate-card {

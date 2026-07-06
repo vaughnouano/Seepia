@@ -90,3 +90,41 @@ textarea:not([rows]) {
 :target {
   scroll-margin-block: 5ex;
 }
+
+/* === reset.css addition === */
+button {
+  -webkit-appearance: none;
+  appearance: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* === style.css fix: give object-fit something concrete to work with === */
+img {
+  width: 100%;
+  height: auto;
+  object-fit: scale-down;
+}
+/* Safari-safe pattern where a fixed box is available: */
+.product-image {
+  width: 100%;
+  height: 100%; /* avoid height:auto on any element using object-fit in Safari */
+  object-fit: scale-down;
+  overflow: visible;
+}
+
+/* === typography.css fix: remove invalid % letter-spacing === */
+p {
+  font-size: var(--fs-s);
+  font-weight: var(--fw-extraLight);
+  line-height: var(--fs-s);
+  letter-spacing: 0.02em; /* was invalid "2%" */
+  text-wrap: pretty; /* harmless no-op on Safari, keep for Chrome */
+}
+
+.book-menu .title {
+  font-weight: var(--fw-light);
+  font-size: var(--fs-lg);
+  letter-spacing: -0.05em; /* was invalid "-5%" */
+}

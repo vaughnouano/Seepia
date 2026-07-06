@@ -140,7 +140,7 @@
 
   .dji-osmo-pocket-4-card .product-image {
     position: absolute;
-    bottom: -70px;
+    bottom: 40px;
     transform: scale(1);
     object-fit: none;
   }
@@ -183,7 +183,7 @@
 
   .kodak-fz55-card .product-image {
     position: absolute;
-    bottom: -50px;
+    bottom: 50px;
     transform: scale(0.7);
     object-fit: none;
   }
