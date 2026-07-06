@@ -31,10 +31,16 @@
   /* ==========
      Block
      ========== */
+
   main {
+    height: 100%;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
     transform: scale(0.9);
-    transform-origin: top;
     width: calc(100% / 0.9);
+    margin-top: 140px;
+    padding-bottom: 0;
   }
 
   .elevate-card {
@@ -72,45 +78,42 @@
     justify-content: center;
     width: 100%;
     height: auto;
+    padding: 15px;
     border-radius: 27px;
   }
 
   .feature .camera-card {
     display: flex;
+    justify-content: end;
     flex-direction: column;
     width: 100%;
-    height: 334px;
+    height: 100%;
     border-radius: calc(27px - 10px);
   }
 
   .feature .title {
     margin: 0;
   }
-
   .feature .image-container {
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
+    top: 0;
+    overflow: visible;
+    height: 0;
   }
 
   .feature .product-image {
-    position: absolute;
-    right: 0px;
-
-    width: 391px;
-    height: 260px;
-
-    /* object-fit: none; */
-    overflow: visible;
+    display: none;
+    top: -100px;
+    object-fit: cover;
+    width: 300px;
   }
-
   .feature .info-container {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    max-height: 100%;
     padding: 15px;
     gap: 24px;
   }
@@ -129,12 +132,13 @@
      ========== */
   .dji-osmo-pocket-4-card {
     width: 100%;
-    height: 432px;
+    height: 100%;
     overflow: visible;
   }
 
   .dji-osmo-pocket-4-card .image-container {
     height: 100%;
+    display: none;
   }
 
   .dji-osmo-pocket-4-card .product-image {
@@ -161,8 +165,8 @@
      ========== */
   .kodak-fz55-card {
     width: 100%;
-    height: 350px;
-    margin-top: 130px;
+    height: 100%;
+    margin-top: 0px;
     overflow: visible;
   }
 
@@ -173,7 +177,7 @@
   }
 
   .kodak-fz55-card .image-container {
-    display: flex;
+    display: none;
     justify-content: center;
     position: relative;
     height: 100%;
@@ -245,6 +249,7 @@
 
   .book-menu .image-container {
     height: 220px;
+    display: none;
   }
 
   /* Iframe */
@@ -267,7 +272,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 150px;
-    margin-bottom: 0px;
+    margin-top: 30px;
+    margin-bottom: 120px;
   }
 }
