@@ -4,6 +4,7 @@ import styles from "./CalendarDay.module.css";
 const STATE_CLASS = {
   empty: styles.empty,
   unavailable: styles.unavailable,
+  returnDay: styles.returnDay,
   available: styles.available,
   today: styles.today,
   selected: styles.selected,

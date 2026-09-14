@@ -27,6 +27,7 @@ const MONTH_NAMES = [
 export default function Calendar({
   cameraId,
   unavailableDates = new Set(),
+  returnDates = new Map(),
   selectedDates = [],
   onSelectDate,
   getHoverState,
@@ -37,6 +38,14 @@ export default function Calendar({
   const [viewYear, setViewYear] = useState(today.getFullYear());
   const [viewMonth, setViewMonth] = useState(today.getMonth());
 
+  // Captured once on mount — used to know whether "Previous" should be
+  // disabled (i.e., are we back at the month the calendar started on?)
+  const [initialYear] = useState(today.getFullYear());
+  const [initialMonth] = useState(today.getMonth());
+
+  const isAtEarliestMonth =
+    viewYear === initialYear && viewMonth === initialMonth;
+
   const cells = getMonthGrid(viewYear, viewMonth);
   const todayKey = formatDateKey(
     today.getFullYear(),
@@ -45,6 +54,7 @@ export default function Calendar({
   );
 
   function goToPreviousMonth() {
+    if (isAtEarliestMonth) return;
     if (viewMonth === 0) {
       setViewMonth(11);
       setViewYear((year) => year - 1);
@@ -65,6 +75,7 @@ export default function Calendar({
   function getDayState(day) {
     const dateKey = formatDateKey(viewYear, viewMonth, day);
     if (unavailableDates.has(dateKey)) return "unavailable";
+    if (returnDates.has(dateKey)) return "returnDay";
     if (selectedDates.includes(dateKey)) return "selected";
 
     const hover = getHoverState?.(dateKey);
@@ -88,6 +99,8 @@ export default function Calendar({
             <IconButton
               iconContent={<PreviousArrowIcon />}
               onClick={goToPreviousMonth}
+              buttonState={isAtEarliestMonth ? "disabled" : "active"}
+              disabled={isAtEarliestMonth}
             />
             <IconButton
               iconContent={<NextArrowIcon />}

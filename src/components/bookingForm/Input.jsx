@@ -7,22 +7,23 @@ export default function Input({
   value,
   checked,
   onChange,
+  onClick,
   options, // for type="radio": [{ value, label }]
   accept, // for type="file"
   required = false,
+  disabled = false,
   placeholder,
 }) {
-  // Checkbox and radio render differently (label wraps the input),
-  // so handle them separately before the generic case below.
   if (type === "checkbox") {
     return (
       <label className={styles.checkboxLabel}>
         <input
-          className={styles.input}
+          className={styles.inputCheckbox}
           id={id}
           type="checkbox"
           checked={checked}
           onChange={(e) => onChange(e.target.checked)}
+          onClick={onClick}
           required={required}
         />
         {label}
@@ -80,6 +81,7 @@ export default function Input({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         required={required}
+        disabled={disabled}
       />
     </div>
   );

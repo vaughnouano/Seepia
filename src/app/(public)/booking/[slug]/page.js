@@ -131,9 +131,16 @@ export default function BookingPage({ params }) {
     : 0;
 
   function handleFieldChange(field, value) {
+    if (field === "preferred_time") {
+      setFormData((prev) => ({
+        ...prev,
+        preferred_time: value,
+        return_time: value,
+      }));
+      return;
+    }
     setFormData((prev) => ({ ...prev, [field]: value }));
   }
-
   function handleFileChange(field, fileList) {
     const file = fileList?.[0] ?? null;
     setFiles((prev) => ({ ...prev, [field]: file }));
@@ -285,7 +292,7 @@ export default function BookingPage({ params }) {
       <button
         type="button"
         className={Styles.backButton}
-        onClick={() => router.back()}
+        onClick={() => router.push("/")}
       >
         Back
       </button>
@@ -425,9 +432,8 @@ export default function BookingPage({ params }) {
                     id="return_time"
                     label="Return time"
                     value={formData.return_time}
-                    onChange={(value) =>
-                      handleFieldChange("return_time", value)
-                    }
+                    onChange={() => {}}
+                    disabled
                     required
                   />
 
@@ -567,6 +573,19 @@ export default function BookingPage({ params }) {
             </section>
 
             <section className={Styles.section}>
+              <label className={Styles.termsRow}>
+                <Input
+                  type="checkbox"
+                  id="terms_agreed"
+                  label="I have read and agree to Seepia Rentals' Terms & Conditions."
+                  checked={termsAgreed}
+                  onChange={() => {}}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleGoToTerms();
+                  }}
+                />
+              </label>
               <div className={Styles.uploadContainer}>
                 <div>
                   <h2 className={Styles.sectionMediumTitle}>

@@ -2,12 +2,17 @@
 
 import Styles from "./page.module.css";
 import { use, useState, useEffect } from "react";
+
 import { useRouter } from "next/navigation";
 import Calendar from "../../../../components/calendar/Calendar";
 import BookingPanel from "../../../../components/calendar/BookingPanel";
 import { cameras } from "../../../../lib/camera";
 import { supabase } from "../../../../lib/supabaseClient";
-import { getUnavailableDates } from "../../../../lib/calendarHelpers";
+import {
+  getUnavailableDates,
+  getReturnDates,
+  formatTime12Hour,
+} from "../../../../lib/calendarHelpers";
 import {
   addDays,
   daysBetween,
@@ -20,6 +25,19 @@ const DURATION_TIERS = {
   "3-4day": { minLength: 3, maxLength: 4 },
   custom: { minLength: 5, maxLength: null },
 };
+
+// Returns the set of 'YYYY-MM-DD' keys for days earlier in the current
+// month than today — the only past dates that can ever be visible, since
+// the calendar's "Previous" button is disabled once at the current month.
+function getPastDateKeysInCurrentMonth() {
+  const today = new Date();
+  const past = new Set();
+  for (let day = 1; day < today.getDate(); day++) {
+    const key = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+    past.add(key);
+  }
+  return past;
+}
 
 export default function CalendarPage({ params }) {
   const { slug } = use(params);
@@ -34,6 +52,7 @@ export default function CalendarPage({ params }) {
   const [durationTier, setDurationTier] = useState("1-2day");
   const [selectedRange, setSelectedRange] = useState(null);
   const [hoveredDate, setHoveredDate] = useState(null);
+  const [returnDayInfo, setReturnDayInfo] = useState(null); // { date, time } | null
 
   const [bookings, setBookings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -42,9 +61,6 @@ export default function CalendarPage({ params }) {
   const camera = cameras[cameraIndex];
   const tier = DURATION_TIERS[durationTier];
 
-  // Fetch real availability from Supabase whenever the selected camera changes.
-  // Reads only from `booking_availability` — the safe, PII-free view — never
-  // the real `bookings` table, since this runs for anonymous site visitors.
   useEffect(() => {
     let isCancelled = false;
 
@@ -54,11 +70,8 @@ export default function CalendarPage({ params }) {
 
       const { data, error } = await supabase
         .from("booking_availability")
-        .select("camera_id, start_date, end_date, status")
+        .select("camera_id, start_date, end_date, status, return_time")
         .eq("camera_id", camera.slug);
-
-      // console.log("RAW Supabase response — data:", data);
-      // console.log("RAW Supabase response — error:", error);
 
       if (isCancelled) return;
 
@@ -87,14 +100,23 @@ export default function CalendarPage({ params }) {
     };
   }, [camera.slug]);
 
-  const unavailableDates = getUnavailableDates(bookings, camera.slug);
-  // console.log("bookings state:", bookings);
-  // console.log("camera.slug:", camera.slug);
-  // console.log("unavailableDates set:", Array.from(unavailableDates));
+  const rawUnavailableDates = getUnavailableDates(bookings, camera.slug);
+  const pastDates = getPastDateKeysInCurrentMonth();
+  const unavailableDates = new Set([...rawUnavailableDates, ...pastDates]);
+
+  const returnDates = getReturnDates(bookings, camera.slug);
+
+  // Selection logic must treat return days as un-passable too, so a
+  // customer can never select a range that runs through one.
+  const blockedForSelection = new Set([
+    ...unavailableDates,
+    ...returnDates.keys(),
+  ]);
 
   function resetSelection() {
     setSelectedRange(null);
     setHoveredDate(null);
+    setReturnDayInfo(null);
   }
 
   function goToPreviousCamera() {
@@ -113,22 +135,28 @@ export default function CalendarPage({ params }) {
   }
 
   function isValidStart(dateKey) {
-    if (unavailableDates.has(dateKey)) return false;
+    if (blockedForSelection.has(dateKey)) return false;
     return (
-      getContinuousAvailableRun(dateKey, unavailableDates) >= tier.minLength
+      getContinuousAvailableRun(dateKey, blockedForSelection) >= tier.minLength
     );
   }
 
   function isRangeContinuousFrom(startKey, endKey) {
     let current = startKey;
     while (current <= endKey) {
-      if (unavailableDates.has(current)) return false;
+      if (blockedForSelection.has(current)) return false;
       current = addDays(current, 1);
     }
     return true;
   }
 
   function handleSelectDate(dateKey) {
+    if (returnDates.has(dateKey)) {
+      setReturnDayInfo({ date: dateKey, time: returnDates.get(dateKey) });
+      return;
+    }
+    setReturnDayInfo(null);
+
     if (unavailableDates.has(dateKey)) return;
 
     if (!selectedRange) {
@@ -202,7 +230,7 @@ export default function CalendarPage({ params }) {
     if (!selectedRange) {
       if (!isValidStart(hoveredDate)) return null;
 
-      const run = getContinuousAvailableRun(hoveredDate, unavailableDates);
+      const run = getContinuousAvailableRun(hoveredDate, blockedForSelection);
       const requiredEnd = addDays(hoveredDate, tier.minLength - 1);
       const optionalLength = tier.maxLength
         ? Math.min(tier.maxLength, run)
@@ -245,7 +273,6 @@ export default function CalendarPage({ params }) {
     : [];
 
   function handleBook() {
-    console.log("handleBook fired"); // temporary debug line
     if (!selectedRange) return;
     const bookingDraft = {
       camera_id: camera.slug,
@@ -274,12 +301,22 @@ export default function CalendarPage({ params }) {
         <Calendar
           cameraId={camera.slug}
           unavailableDates={unavailableDates}
+          returnDates={returnDates}
           selectedDates={selectedDates}
           onSelectDate={handleSelectDate}
           getHoverState={getHoverState}
           onHoverDate={setHoveredDate}
           onHoverEnd={() => setHoveredDate(null)}
         />
+        {returnDayInfo && (
+          <p>
+            Return day: expect the camera to be available by{" "}
+            {returnDayInfo.time
+              ? formatTime12Hour(returnDayInfo.time)
+              : "the same time it was booked"}
+            .
+          </p>
+        )}
       </div>
     </main>
   );

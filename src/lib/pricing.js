@@ -1,7 +1,7 @@
 export const pricing = {
   "g7x-mark-iii": {
     "1-2day": 500,
-    "3-4day": 450,
+    "3-4day": 470,
     custom: 400,
   },
   "osmo-pocket-4": {
