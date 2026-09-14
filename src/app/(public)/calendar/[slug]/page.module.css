@@ -9,13 +9,29 @@
 .card {
   background-color: var(--color-bg-alt);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   gap: var(--space-sm);
   padding: var(--space-xs);
   border-radius: 32px;
   width: 100%;
-  height: auto;
+  height: fit-content;
+  width: fit-content;
   max-width: 1058px;
+  overflow: hidden;
+}
+
+.main {
+  display: flex;
+  gap: var(--space-sm);
+  /* padding: var(--space-xs); */
+}
+
+.returnDayInfo {
+  text-align: center;
+  font-weight: var(--font-weight-regular);
+  padding: 12px 32px;
+  line-height: 1.25;
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
@@ -45,6 +61,11 @@
   .card {
     flex-direction: column-reverse;
     max-width: 100%;
-    margin-inline: 24px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--space-sm);
   }
 }

@@ -21,11 +21,14 @@
   background-color: rgba(0, 0, 0, 0.02);
 }
 
+/* .pastDate {
+  background-color: red;
+} */
+
 .unavailable {
   cursor: not-allowed;
-  background-color: transparent;
-  font-weight: var(--font-weight-light);
-  /* border: 2px solid var(--color-border-primary-light); */
+  background-color: rgba(0, 0, 0, 0.02);
+  font-weight: var(--font-weight-medium);
 }
 
 .today {
@@ -38,14 +41,15 @@
   background-color: var(--color-primary-light);
   /* border: 2px solid var(--color-text-on-secondary); */
 
-  box-shadow: inset 0px 0px 0px 3px var(--color-text-on-secondary);
+  box-shadow: inset 0px 0px 0px 2px var(--color-text-on-secondary);
   /* transform: translate(-3px, -3px); */
 }
 
 .returnDay {
   cursor: pointer;
-  background-color: rgb(218, 125, 218);
-  color: white;
+  background-color: rgba(0, 0, 0, 0.02);
+  box-shadow: inset 0px 0px 0px 3px var(--color-primary);
+  color: var(--color-primary);
 }
 
 .hoverRequired {
@@ -70,7 +74,7 @@
 }
 
 .selected:focus {
-  box-shadow: inset 0px 0px 0px 3px var(--color-text-on-secondary);
+  box-shadow: inset 0px 0px 0px 2px var(--color-text-on-secondary);
   /* transform: translate(-3px, -3px); */
 }
 
@@ -96,13 +100,13 @@
   .unavailable {
     cursor: not-allowed;
     background-color: transparent;
-    font-weight: var(--font-weight-light);
+    font-weight: var(--font-weight-medium);
+
     /* border: 2px solid var(--color-border-primary-light); */
   }
 
   .returnDay {
     cursor: pointer;
-    background-color: rgb(218, 125, 218);
-    color: white;
+    color: var(--color-primary);
   }
 }

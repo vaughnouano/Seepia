@@ -287,34 +287,39 @@ export default function CalendarPage({ params }) {
   return (
     <main className={Styles.container}>
       <div className={Styles.card}>
-        <BookingPanel
-          camera={camera}
-          onPrevCamera={goToPreviousCamera}
-          onNextCamera={goToNextCamera}
-          durationTier={durationTier}
-          onSelectDurationTier={handleSelectDurationTier}
-          onBook={handleBook}
-        />
-        {loadError && (
-          <p role="alert">Couldn't load availability: {loadError}</p>
-        )}
-        <Calendar
-          cameraId={camera.slug}
-          unavailableDates={unavailableDates}
-          returnDates={returnDates}
-          selectedDates={selectedDates}
-          onSelectDate={handleSelectDate}
-          getHoverState={getHoverState}
-          onHoverDate={setHoveredDate}
-          onHoverEnd={() => setHoveredDate(null)}
-        />
+        <div className={Styles.main}>
+          <BookingPanel
+            camera={camera}
+            onPrevCamera={goToPreviousCamera}
+            onNextCamera={goToNextCamera}
+            durationTier={durationTier}
+            onSelectDurationTier={handleSelectDurationTier}
+            onBook={handleBook}
+          />
+          {loadError && (
+            <p role="alert">Couldn't load availability: {loadError}</p>
+          )}
+          <Calendar
+            cameraId={camera.slug}
+            unavailableDates={unavailableDates}
+            returnDates={returnDates}
+            selectedDates={selectedDates}
+            onSelectDate={handleSelectDate}
+            getHoverState={getHoverState}
+            onHoverDate={setHoveredDate}
+            onHoverEnd={() => setHoveredDate(null)}
+          />
+        </div>
+
         {returnDayInfo && (
-          <p>
+          <p className={Styles.returnDayInfo}>
             Return day: expect the camera to be available by{" "}
-            {returnDayInfo.time
-              ? formatTime12Hour(returnDayInfo.time)
-              : "the same time it was booked"}
-            .
+            <b>
+              {returnDayInfo.time
+                ? formatTime12Hour(returnDayInfo.time)
+                : "the same time it was booked"}
+              .
+            </b>
           </p>
         )}
       </div>
