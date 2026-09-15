@@ -50,6 +50,13 @@
   .card {
     flex-direction: column;
     max-width: fit-content;
+    margin-inline: 32px;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--space-sm);
   }
 }
 @media (max-width: 767px) {

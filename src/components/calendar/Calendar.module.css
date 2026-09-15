@@ -72,6 +72,12 @@
   /* background-color: orange; */
 }
 
+@media (min-width: 768px) and (max-width: 1024px) {
+  .card {
+    max-width: 559px;
+  }
+}
+
 @media (max-width: 767px) {
   .card {
     display: flex;
@@ -79,6 +85,7 @@
 
     border-radius: 20px;
     width: 100%;
+
     padding: var(--space-xs);
 
     height: fit-content;
