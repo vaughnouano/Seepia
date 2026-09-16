@@ -4,7 +4,9 @@
   flex-direction: column;
 
   border-radius: 20px;
-  width: 800px;
+  width: 100%;
+  min-height: 100%;
+  max-width: 800px;
   padding: var(--space-xs);
 
   height: 641px;
@@ -25,15 +27,16 @@
 .header {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
   padding: var(--space-xs) var(--space-xs) var(--space-md) var(--space-xs);
   border-bottom: 2px solid var(--color-border-primary-light);
   margin-bottom: 20px;
 }
+
 .month {
   font-size: var(--font-size-xl);
   letter-spacing: -1;
   font-weight: var(--font-weight-bold);
+  width: 100%;
 }
 .year {
   font-size: var(--font-size-md);
@@ -63,6 +66,7 @@
 
 .grid_container {
   height: 100%;
+  width: 100%;
 }
 .grid {
   display: grid;

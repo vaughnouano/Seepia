@@ -3,13 +3,13 @@
 import { useRouter } from "next/navigation";
 import styles from "../calendar/BookingPanel.module.css";
 
-import SelectorButton from "../../components/ui/button/SelectorButton/SelectorButton";
-import PriceButton from "../../components/ui/button/PriceButton/PriceButton";
+import SelectorButton from "../ui/button/SelectorButton/SelectorButton";
+import PriceButton from "../ui/button/PriceButton/PriceButton";
 import IconButton from "../ui/button/IconButton/IconButton";
 
-import ChevronLeftIcon from "../../components/icons/ChevronBack";
-import ChevronRightIcon from "../../components/icons/ChevronNext";
-import HomeIcon from "../../components/icons/HomeIcon";
+import ChevronLeftIcon from "../icons/ChevronBack";
+import ChevronRightIcon from "../icons/ChevronNext";
+import HomeIcon from "../icons/HomeIcon";
 
 import Image from "next/image";
 import { pricing } from "../../lib/pricing";

@@ -10,13 +10,19 @@
 }
 
 .Main {
-  background-color: orange;
+  width: 100%;
+  max-width: fit-content;
+  display: flex;
+  gap: 12px;
 }
 
+.leftPanel {
+  width: 100%;
+  min-width: 450px;
+}
 .rightPanel {
-  width: 545px;
+  min-width: 545px;
   height: fit-content;
-  overflow: hidden;
 }
 
 .submissionCardList {
@@ -31,4 +37,50 @@
   overflow: scroll;
   overflow-x: hidden;
   border-radius: 8px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .Main {
+    width: 100%;
+    max-width: fit-content;
+    display: flex;
+    gap: 12px;
+    margin-inline: 24px;
+  }
+
+  .leftPanel {
+    width: 100%;
+    min-width: 350px;
+  }
+  .rightPanel {
+    min-width: 445px;
+    height: fit-content;
+  }
+}
+
+@media (max-width: 767px) {
+  .Main {
+    width: 100%;
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+    padding-inline: 16px;
+    padding-top: 32px;
+    padding-bottom: 256px;
+  }
+  .leftPanel {
+    width: 100%;
+    min-width: 350px;
+  }
+  .rightPanel {
+    min-width: 0;
+    height: fit-content;
+  }
+
+  .submissionCardList {
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    background-color: red;
+  }
 }

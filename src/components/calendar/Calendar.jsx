@@ -1,10 +1,10 @@
 "use client";
 
 import React, { useState } from "react";
-import PreviousArrowIcon from "../../components/icons/PreviousArrowIcon";
-import NextArrowIcon from "../../components/icons/NextArrowIcon";
-import IconButton from "../../components/ui/button/IconButton/IconButton";
-import CalendarDay from "../../components/ui/calendarDay/CalendarDay";
+import PreviousArrowIcon from "../icons/PreviousArrowIcon";
+import NextArrowIcon from "../icons/NextArrowIcon";
+import IconButton from "../ui/button/IconButton/IconButton";
+import CalendarDay from "../ui/calendarDay/CalendarDay";
 import { getMonthGrid, formatDateKey } from "../../lib/calendarHelpers";
 import styles from "./Calendar.module.css";
 
@@ -91,7 +91,7 @@ export default function Calendar({
     <div className={styles.card}>
       <div className={styles.calendar}>
         <div className={styles.header}>
-          <div>
+          <div className={styles.monthYear}>
             <h2 className={styles.month}>{MONTH_NAMES[viewMonth]}</h2>
             <p className={styles.year}>{viewYear}</p>
           </div>

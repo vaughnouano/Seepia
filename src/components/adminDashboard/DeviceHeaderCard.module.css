@@ -6,6 +6,7 @@
   border-radius: 16px;
 
   width: 100%;
+  box-shadow: 5px 5px 0 #00000025;
 }
 
 .container {
@@ -45,10 +46,20 @@
   padding-bottom: 24px;
 
   display: flex;
+  width: fit-content;
   gap: 12px;
   width: 100%;
 
   border-bottom: 2px solid var(--color-primary-light);
+  overflow: scroll;
+  scrollbar-width: none;
+}
+
+.selectorButtons {
+  display: flex;
+  gap: 12px;
+
+  width: 500px;
 }
 
 .pendingText {
@@ -59,4 +70,15 @@
   width: 100%;
   background-color: #ffffff;
   color: var(--color-primary);
+}
+
+@media (max-width: 767px) {
+  .container {
+    overflow: hidden;
+    padding-inline: 16px;
+  }
+  .selectorButtonContainer {
+    width: fit-content;
+    padding-right: 6px;
+  }
 }

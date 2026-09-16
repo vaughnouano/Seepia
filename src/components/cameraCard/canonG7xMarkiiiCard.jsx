@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import Styles from "./canonG7xMarkiiiCard.module.css";
 
-import TextIconButton from "../../components/ui/button/TextIconButton/TextIconButton";
+import TextIconButton from "../ui/button/TextIconButton/TextIconButton";
 import Tag from "../ui/tags/Tag";
 
 import CanonG7XMarkIII from "../../../public/equipment-mock/canon_g7x_top.png";

@@ -30,17 +30,21 @@ export default function DeviceHeaderCard({
           />
         </div>
         <div className={Styles.item}>
-          {cameras.map((camera) => (
-            <SelectorButton
-              key={camera.slug}
-              textContent={camera.name}
-              fill={true}
-              buttonState={
-                activeCameraSlug === camera.slug ? "active" : "inactive"
-              }
-              onClick={() => onCameraChange(camera.slug)}
-            />
-          ))}
+          <div className={Styles.selectorButtonContainer}>
+            <div className={Styles.selectorButtons}>
+              {cameras.map((camera) => (
+                <SelectorButton
+                  key={camera.slug}
+                  textContent={camera.name}
+                  fill={true}
+                  buttonState={
+                    activeCameraSlug === camera.slug ? "active" : "inactive"
+                  }
+                  onClick={() => onCameraChange(camera.slug)}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </div>
