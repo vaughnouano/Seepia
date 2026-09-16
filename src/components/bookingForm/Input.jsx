@@ -8,8 +8,8 @@ export default function Input({
   checked,
   onChange,
   onClick,
-  options, // for type="radio": [{ value, label }]
-  accept, // for type="file"
+  options,
+  accept,
   required = false,
   disabled = false,
   placeholder,
@@ -25,6 +25,7 @@ export default function Input({
           onChange={(e) => onChange(e.target.checked)}
           onClick={onClick}
           required={required}
+          disabled={disabled}
         />
         {label}
       </label>
@@ -45,6 +46,7 @@ export default function Input({
               checked={value === option.value}
               onChange={(e) => onChange(e.target.value)}
               required={required}
+              disabled={disabled}
             />
             {option.label}
           </label>
@@ -64,12 +66,12 @@ export default function Input({
           accept={accept}
           onChange={(e) => onChange(e.target.files)}
           required={required}
+          disabled={disabled}
         />
       </div>
     );
   }
 
-  // Generic case — covers text, number, date, time, tel, email, url
   return (
     <div className={styles.field}>
       {label && <label htmlFor={id}>{label}</label>}

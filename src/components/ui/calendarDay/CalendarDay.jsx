@@ -18,6 +18,7 @@ export default function CalendarDay({
   onClick,
   onMouseEnter,
   onMouseLeave,
+  forceClickable = false, // new
 }) {
   if (state === "empty") {
     return <div className={`${styles.day} ${styles.empty}`} />;
@@ -30,7 +31,7 @@ export default function CalendarDay({
       onClick={onClick}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
-      disabled={state === "unavailable"}
+      disabled={state === "unavailable" && !forceClickable}
     >
       {day}
     </button>

@@ -1,6 +1,34 @@
-.Container {
+.container {
   background-color: rgb(255, 255, 255);
 
   min-width: 100%;
   min-height: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Main {
+  background-color: orange;
+}
+
+.rightPanel {
+  width: 545px;
+  height: fit-content;
+  overflow: hidden;
+}
+
+.submissionCardList {
+  display: flex;
+  gap: 8px;
+
+  margin-top: 16px;
+  margin-inline: 8px;
+
+  height: 350px;
+  flex-direction: column;
+  overflow: scroll;
+  overflow-x: hidden;
+  border-radius: 8px;
 }
