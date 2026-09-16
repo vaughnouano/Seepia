@@ -10,7 +10,6 @@
     "lint:fix": "eslint --fix"
   },
   "dependencies": {
-    "@supabase/ssr": "^0.12.7",
     "@supabase/supabase-js": "^2.114.0",
     "next": "16.2.12",
     "react": "19.2.4",

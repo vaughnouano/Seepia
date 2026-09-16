@@ -33,7 +33,6 @@ export default function Calendar({
   getHoverState,
   onHoverDate,
   onHoverEnd,
-  bookedDatesClickable = false, // new: lets admin click booked dates
 }) {
   const today = new Date();
   const [viewYear, setViewYear] = useState(today.getFullYear());
@@ -132,7 +131,6 @@ export default function Calendar({
                   state={getDayState(day)}
                   onClick={() => onSelectDate?.(dateKey)}
                   onMouseEnter={() => onHoverDate?.(dateKey)}
-                  forceClickable={bookedDatesClickable}
                 />
               );
             })}
