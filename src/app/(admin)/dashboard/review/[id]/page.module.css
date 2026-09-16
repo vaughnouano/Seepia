@@ -1,0 +1,405 @@
+/* page.module.css — bare structure only, style freely */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  width: 100%;
+  gap: var(--space-lg);
+  background-color: white;
+  padding-top: 48px;
+  padding-bottom: 48px;
+  /* background-color: red; */
+}
+
+.Form {
+  display: flex;
+  width: 1030px;
+}
+
+.backButton {
+  all: unset;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-md);
+  color: var(--color-primary);
+  width: fit-content;
+}
+
+.formLayout {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: var(--space-md);
+}
+
+/* ===== Left panel ===== */
+
+.leftPanel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* gap: var(--space-lg); */
+  min-width: 320px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-inline: 24px;
+  gap: var(--space-sm);
+}
+
+.sectionTitle {
+  font-size: var(--font-size-xxl);
+  font-weight: var(--font-weight-bold);
+
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 16px;
+
+  color: var(--color-primary);
+}
+
+.agreementTitle {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  line-height: 1;
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--space-md);
+}
+
+.sectionMediumTitle {
+  font-size: 2.25rem;
+  font-weight: var(--font-weight-bold);
+
+  display: flex;
+  justify-content: start;
+  gap: 16px;
+
+  color: var(--color-primary);
+}
+
+.sectionSmallTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semiBold);
+
+  display: flex;
+  justify-content: start;
+  gap: 16px;
+
+  color: var(--color-primary);
+}
+
+.fieldRow {
+  display: flex;
+  gap: var(--space-md);
+}
+
+/* .fieldRow > * {
+  flex: 1;
+} */
+
+.toggleRow {
+  display: flex;
+  gap: var(--space-sm);
+
+  margin-inline: var(--space-xxs) var(--space-md);
+}
+
+.helperText {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-regular);
+  color: var(--color-primary);
+}
+
+.warningText {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-danger);
+}
+
+.DeliveryDetailsContainer {
+  display: flex;
+  flex-direction: column;
+  padding-inline: 12px;
+  padding-top: var(--space-md);
+  padding-bottom: var(--space-md);
+  gap: var(--space-sm);
+}
+
+.subPanel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+
+  border: 2px solid var(--color-border-primary-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.SocialsContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 24px;
+}
+.inputContainer {
+  margin-inline: 12px;
+}
+
+.RentingPurposeContainer {
+  background-color: rgba(255, 0, 0, 0);
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.SharePhotosContainer {
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.uploadContainer {
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.SignatureContainer {
+  margin: 12px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.uploadRow {
+  display: flex;
+  gap: var(--space-sm);
+}
+
+.uploadRow > * {
+  flex: 1;
+}
+
+/* ===== Right panel ===== */
+
+.rightPanel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  width: 100%;
+  max-width: 400px;
+  /* background-color: orange; */
+}
+
+.summaryCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  border: 2px solid var(--color-border-primary-light);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+}
+
+.cameraName {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-bold);
+}
+
+.forMonth {
+  font-size: var(--font-size-md);
+}
+
+.dateChips {
+  display: flex;
+  gap: var(--space-xs);
+  flex-wrap: wrap;
+}
+
+.dateChip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-primary-light);
+  /* padding: var(--space-sm) var(--space-sm); */
+  border: 2px solid var(--color-border-primary);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-border-primary);
+  line-height: 1;
+}
+
+.priceBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-xl);
+
+  color: var(--color-text-on-primary);
+  font-weight: var(--font-weight-regular);
+
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  /* box-shadow: 3px 6px 0 #803d50; */
+
+  background: var(--color-primary);
+  background:
+    /* background */
+    linear-gradient(
+        180deg,
+        var(--color-primary) 0%,
+        var(--color-primary-to-dark) 100%
+      )
+      padding-box,
+    /* border */
+    linear-gradient(
+        0deg,
+        var(--color-primary) 00%,
+        var(--color-border-primary-to-dark) 100%
+      )
+      border-box;
+
+  transition: var(--transition);
+}
+
+.agreementCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  padding-right: var(--space-md);
+  padding-bottom: 64px;
+}
+
+.agreementList {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  color: var(--color-text-on-secondary);
+  gap: var(--space-xs);
+  font-size: var(--font-size-md);
+  padding-left: var(--space-md);
+
+  list-style-type: disc;
+}
+
+.decorativeImage {
+  width: auto;
+  height: 100%;
+  min-height: 200px;
+  cursor: pointer;
+  background-image: url("/images/vertical-brand-image-2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 12px;
+  margin-inline: 14px;
+  margin-bottom: 64px;
+}
+
+.termsRow {
+  display: flex;
+  align-items: center;
+  align-items: flex-start;
+  gap: var(--space-xs);
+  font-size: var(--font-size-sm);
+  cursor: pointer;
+  margin-top: 24px;
+  color: white;
+}
+
+.priceBoxTitle {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semiBold);
+  line-height: 1;
+}
+
+.priceSmallText {
+  font-size: var(--font-size-sm);
+}
+
+.summaryCardHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: var(--font-size-sm);
+}
+.cameraName {
+  line-height: 1;
+  font-weight: var(--font-weight-extraBold);
+  font-style: italic;
+}
+.forMonth {
+  font-size: var(--font-size-lg);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .Form {
+    display: flex;
+    width: 100%;
+  }
+  .sectionTitle {
+    font-size: var(--font-size-xl);
+    line-height: 1;
+  }
+  .formLayout {
+    width: 720px;
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .formLayout {
+    flex-direction: column;
+  }
+  .sectionTitle {
+    font-size: var(--font-size-xl);
+    line-height: 1;
+  }
+  .Form {
+    display: flex;
+    width: 100%;
+  }
+  .rightPanel {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    /* border: 5px solid blue; */
+    width: 100%;
+    max-width: 100%;
+  }
+  .summaryCard {
+    margin-inline: 24px;
+  }
+  .agreementCard {
+    padding-inline: 24px;
+    padding-bottom: 24px;
+  }
+  .buttonContainer {
+    padding: 24px;
+  }
+}

@@ -1,0 +1,15 @@
+/* app/(admin)/login/page.module.css — bare structure only */
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100dvh;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  width: 100%;
+  max-width: 360px;
+}
