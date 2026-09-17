@@ -272,6 +272,17 @@ export default function CalendarPage({ params }) {
     ? getDateRangeArray(selectedRange.start, selectedRange.end)
     : [];
 
+  // function handleBook() {
+  //   if (!selectedRange) return;
+  //   const bookingDraft = {
+  //     camera_id: camera.slug,
+  //     duration_type: durationTier,
+  //     start_date: selectedRange.start,
+  //     end_date: selectedRange.end,
+  //   };
+  //   sessionStorage.setItem("bookingDraft", JSON.stringify(bookingDraft));
+  //   router.push(`/booking/${camera.slug}`);
+  // }
   function handleBook() {
     if (!selectedRange) return;
     const bookingDraft = {
@@ -281,6 +292,8 @@ export default function CalendarPage({ params }) {
       end_date: selectedRange.end,
     };
     sessionStorage.setItem("bookingDraft", JSON.stringify(bookingDraft));
+    sessionStorage.removeItem("termsAgreed");
+    sessionStorage.removeItem("termsAgreedAt");
     router.push(`/booking/${camera.slug}`);
   }
 

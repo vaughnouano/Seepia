@@ -292,7 +292,7 @@ export default function BookingPage({ params }) {
       <button
         type="button"
         className={Styles.backButton}
-        onClick={() => router.push("/")}
+        onClick={() => router.push(`/calendar/${slug}`)}
       >
         Back
       </button>
@@ -725,18 +725,6 @@ export default function BookingPage({ params }) {
                   {submitError}
                 </p>
               )}
-              <label className={Styles.termsRow}>
-                <input
-                  type="checkbox"
-                  checked={termsAgreed}
-                  readOnly
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleGoToTerms();
-                  }}
-                />
-                I have read and agree to Seepia Rentals' Terms &amp; Conditions.
-              </label>
             </div>
           </div>
         </form>
