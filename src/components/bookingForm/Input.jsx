@@ -58,9 +58,13 @@ export default function Input({
   if (type === "file") {
     return (
       <div className={styles.field}>
-        {label && <label htmlFor={id}>{label}</label>}
+        {label && (
+          <label className={styles.labelText} htmlFor={id}>
+            {label}
+          </label>
+        )}
         <input
-          className={styles.input}
+          className={`${styles.input} ${styles.file}`}
           id={id}
           type="file"
           accept={accept}
