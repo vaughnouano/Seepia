@@ -602,7 +602,7 @@ export default function BookingPage({ params }) {
                     <Input
                       type="file"
                       id="id_photo"
-                      label="Upload ID only"
+                      label="ID only"
                       accept="image/*"
                       onChange={(fileList) =>
                         handleFileChange("id_photo", fileList)
@@ -612,7 +612,7 @@ export default function BookingPage({ params }) {
                     <Input
                       type="file"
                       id="selfie_with_id"
-                      label="Upload selfie with ID"
+                      label="Selfie with ID"
                       accept="image/*"
                       onChange={(fileList) =>
                         handleFileChange("selfie_with_id", fileList)
