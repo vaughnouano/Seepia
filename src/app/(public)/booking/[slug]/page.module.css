@@ -138,6 +138,7 @@
   gap: var(--space-sm);
 }
 
+/* Update this selector in page.module.css */
 .subPanel {
   display: flex;
   flex-direction: column;
@@ -146,6 +147,9 @@
   border: 2px solid var(--color-border-primary-light);
   border-radius: var(--radius-md);
   padding: var(--space-md);
+
+  width: 100%; /* Forces container to remain bounded by the viewport width */
+  box-sizing: border-box; /* Includes your padding within that 100% width calculation */
 }
 
 .SocialsContainer {
